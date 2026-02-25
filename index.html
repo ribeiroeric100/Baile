@@ -60,10 +60,12 @@
 <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 px-4 py-3 flex items-center justify-between">
 <button class="p-2 rounded-full hover:bg-white/10 transition-colors">
 </button>
+<img src="logo_menino.png" alt="" class="h-8 w-auto">
 <h1 class="text-lg font-bold tracking-tight uppercase">Baile do Menino Rei</h1>
 <button class="p-2 rounded-full hover:bg-white/10 transition-colors">
 </button>
 </nav>
+
 <main class="pt-16 pb-32">
 <!-- Hero Section -->
 <section class="relative w-full aspect-[4/5] md:aspect-video flex flex-col justify-end p-6 overflow-hidden">
@@ -82,7 +84,7 @@ src="fotos/foto1.jpg"/>
 <div class="flex flex-wrap gap-4 text-sm font-medium opacity-90">
 <div class="flex items-center gap-1.5">
 <span class="material-symbols-outlined text-primary text-lg">calendar_today</span>
-                        4 DE ABRIL, 2026 • 22h
+                        4 DE ABRIL, 2026 • 21h
                     </div>
 <div class="flex items-center gap-1.5">
 <span class="material-symbols-outlined text-secondary text-lg">location_on</span>
@@ -123,9 +125,9 @@ src="fotos/beck.jpeg"/>
 <div class="shrink-0 group">
 <div class="w-24 h-24 rounded-full p-0.5 bg-gradient-to-tr from-accent to-transparent">
 <img alt="DJ portrait" class="w-full h-full rounded-full object-cover  transition-all" data-alt="Female DJ performing" 
-src=""/>
+src="fotos/alex.jpeg"/>
 </div>
-<p class="text-center mt-2 text-xs font-bold text-white">DJ Nem da TM</p>
+<p class="text-center mt-2 text-xs font-bold text-white">Alex DJ</p>
 </div>
 <div class="shrink-0 group">
 <div class="w-24 h-24 rounded-full p-0.5 bg-gradient-to-tr from-secondary to-transparent">
@@ -158,7 +160,7 @@ Entre, aproveite a vibe e deixe a noite acontecer.</p>
  <div class="ticket-card cursor-pointer relative glass rounded-2xl p-5 border-white/5 hover:border-white/20 transition-all active:scale-[0.98]" data-plan-id="casadinha-15" data-plan-name="Casadinha" data-plan-price="15" data-plan-description="2 ingressos">
 <div class="flex justify-between items-start">
 <div>
-<h4 class="text-xl font-bold text-white">💑 Casadinha</h4>
+<h4 class="text-xl font-bold text-white">Casadinha 💑</h4>
 <p class="text-sm text-slate-400">
 Vem com o par e economiza!</p>
 </div>
@@ -170,7 +172,7 @@ Vem com o par e economiza!</p>
 <div class="mt-4 flex items-center gap-4">
 <div class="flex items-center gap-2 text-xs text-slate-300">
 <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
-                        Limitado por 2 Semanas
+                        Promoção valida até 15/03 .
                     </div>
 </div>
 </div>
@@ -198,6 +200,7 @@ Vem com o par e economiza!</p>
 <!-- Location Map Placeholder -->
 <section class="px-6 mt-10">
 <h3 class="font-bold mb-4">LOCAL</h3>
+<a href="https://www.google.com/maps/search/?api=1&query=Bar%20%26%20Danceteria%20Op%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="block" aria-label="Abrir localização no Google Maps">
 <div class="relative h-48 rounded-2xl overflow-hidden border border-white/10">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.786777910489!2d-44.85721558963951!3d-2.5759252973913918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f605861aaa84df%3A0x1286a5a6139fa044!2zQmFyICYgRGFuY2V0ZXJpYSBPcMOnw6Nv!5e0!3m2!1spt-BR!2sbr!4v1772018524285!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <div class="absolute inset-0 flex items-center justify-center">
@@ -206,7 +209,16 @@ Vem com o par e economiza!</p>
 </div>
 </div>
 </div>
+</a>
 </section>
+
+<section class="px-6 mt-10">
+    <div class="text-center">
+    <h2 class="text-sm font-black tracking-tighter uppercase mb-1">BAILE DO<span class="text-primary"> MENINO REI</span></h2>
+    <p class="text-[10px] text-slate-500 uppercase tracking-widest font-medium">© todos os direitos reservados.</p>
+    </div>
+</section>
+
 </main>
 <!-- Fixed Bottom CTA -->
 <div class="fixed bottom-0 left-0 right-0 p-6 z-50 glass border-t border-white/10">
@@ -277,13 +289,13 @@ Vem com o par e economiza!</p>
 
             switch (ticket.id) {
                 case 'individual':
-                    return `Bom dia! Quero 1 Ingresso Individual (R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
+                    return `Olá! Quero 1 Ingresso Individual (R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
                 case 'casadinha-15':
-                    return `Bom dia! Quero a Casadinha (2 ingressos por R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
+                    return `Olá! Quero a Casadinha (2 ingressos por R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
                 case 'casadinha-100':
-                    return `Bom dia! Quero a Casadinha + Combo (2 ingressos e 2 baldes por R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
+                    return `Olá! Quero a Casadinha + Combo (2 ingressos e 2 baldes por R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
                 default:
-                    return `Bom dia! Quero o ingresso "${ticket.name}" (R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
+                    return `Olá! Quero o ingresso "${ticket.name}" (R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
             }
         }
 
