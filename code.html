@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#af25f4",
+                        "secondary": "#2563eb",
+                        "accent": "#f472b6",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#1c1022",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow-purple {
+            box-shadow: 0 0 15px rgba(175, 37, 244, 0.4);
+        }
+        .neon-border-primary {
+            border: 1px solid rgba(175, 37, 244, 0.5);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(175, 37, 244, 0.8);
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 px-4 py-3 flex items-center justify-between">
+<button class="p-2 rounded-full hover:bg-white/10 transition-colors">
+</button>
+<h1 class="text-lg font-bold tracking-tight uppercase">Baile do Menino Rei</h1>
+<button class="p-2 rounded-full hover:bg-white/10 transition-colors">
+</button>
+</nav>
+<main class="pt-16 pb-32">
+<!-- Hero Section -->
+<section class="relative w-full aspect-[4/5] md:aspect-video flex flex-col justify-end p-6 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent z-10"></div>
+<img alt="Nightclub with neon lights and crowd" class="absolute inset-0 w-full h-full object-cover" data-alt="Futuristic neon nightclub crowd silhouettes and lasers" 
+src="fotos/foto1.jpg"/>
+<div class="relative z-20 space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/50 text-primary text-xs font-bold uppercase tracking-wider animate-pulse">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                    Ingressos Limitados
+                </div>
+<h1 class="text-4xl md:text-6xl font-bold leading-none text-glow">BAILE DO <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">MENINO REI</span></h1>
+<div class="flex flex-wrap gap-4 text-sm font-medium opacity-90">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-lg">calendar_today</span>
+                        4 DE ABRIL, 2026 • 22h
+                    </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-lg">location_on</span>
+                        BAR E DANCETERIA OPÇÃO
+                    </div>
+</div>
+<!-- Countdown Timer -->
+<div class="grid grid-cols-3 gap-3 pt-2">
+<div class="glass rounded-xl p-3 text-center border-primary/30">
+<div id="count-hours" class="text-2xl font-bold text-white">0</div>
+<div class="text-[10px] uppercase tracking-widest text-primary font-bold">Horas</div>
+</div>
+<div class="glass rounded-xl p-3 text-center border-accent/30">
+<div id="count-minutes" class="text-2xl font-bold text-white">0</div>
+<div class="text-[10px] uppercase tracking-widest text-accent font-bold">Minutos</div>
+</div>
+<div class="glass rounded-xl p-3 text-center border-secondary/30">
+<div id="count-seconds" class="text-2xl font-bold text-white">0</div>
+<div class="text-[10px] uppercase tracking-widest text-secondary font-bold">Segundos</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Line-up -->
+<section class="mt-10">
+<h3 class="px-6 mb-4 font-bold text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-accent">graphic_eq</span>
+                ATRAÇÕES
+            </h3>
+<div class="flex overflow-x-auto gap-4 px-6 pb-4">
+<div class="shrink-0 group">
+<div class="w-24 h-24 rounded-full p-0.5 bg-gradient-to-tr from-primary to-transparent">
+<img alt="DJ portrait" class="w-full h-full rounded-full object-cover  transition-all" data-alt="Professional DJ profile picture" 
+src="fotos/beck.jpeg"/>
+</div>
+<p class="text-center mt-2 text-xs font-bold text-white">DJ Beck</p>
+</div>
+<div class="shrink-0 group">
+<div class="w-24 h-24 rounded-full p-0.5 bg-gradient-to-tr from-accent to-transparent">
+<img alt="DJ portrait" class="w-full h-full rounded-full object-cover  transition-all" data-alt="Female DJ performing" 
+src=""/>
+</div>
+<p class="text-center mt-2 text-xs font-bold text-white">DJ Nem da TM</p>
+</div>
+<div class="shrink-0 group">
+<div class="w-24 h-24 rounded-full p-0.5 bg-gradient-to-tr from-secondary to-transparent">
+<img alt="DJ portrait" class="w-full h-full rounded-full object-cover  transition-all" data-alt="EDM Artist profile" 
+src="fotos/daninho.jpeg"/>
+</div>
+<p class="text-center mt-2 text-xs font-bold text-white">DJ Daninho Pro Mix</p>
+</div>
+</div>
+</section>
+<!-- Ticket Selection -->
+<section class="px-6 mt-10 space-y-4">
+<h3 class="font-bold text-lg">VEJA AS PROMOÇÕES</h3>
+<!-- Pista Card -->
+<div class="ticket-card cursor-pointer relative glass rounded-2xl p-5 border-white/5 hover:border-white/20 transition-all active:scale-[0.98]" data-plan-id="individual" data-plan-name="Ingresso Individual" data-plan-price="10" data-plan-description="Access to dance floor &amp; main bar">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-xl font-bold text-white">Ingresso Individual</h4>
+</div>
+<div class="text-right">
+<p class="text-2xl font-bold text-white">R$ 10</p>
+<p class="text-[10px] text-slate-500"></p>
+</div>
+</div>
+<p class="text-sm text-slate-400">
+Entre, aproveite a vibe e deixe a noite acontecer.</p>
+                    </div>
+</div>
+<!-- VIP Card (Recommended) -->
+ <div class="ticket-card cursor-pointer relative glass rounded-2xl p-5 border-white/5 hover:border-white/20 transition-all active:scale-[0.98]" data-plan-id="casadinha-15" data-plan-name="Casadinha" data-plan-price="15" data-plan-description="2 ingressos">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-xl font-bold text-white">💑 Casadinha</h4>
+<p class="text-sm text-slate-400">
+Vem com o par e economiza!</p>
+</div>
+<div class="text-right">
+<p class="text-2xl font-bold text-white">R$ 15</p>
+<p class="text-[10px] text-slate-500"></p>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-4">
+<div class="flex items-center gap-2 text-xs text-slate-300">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                        Limitado por 2 Semanas
+                    </div>
+</div>
+</div>
+
+<!-- Backstage Card -->
+<div class="ticket-card cursor-pointer relative bg-primary/10 rounded-2xl p-5 border-2 border-primary neon-glow-purple transition-all active:scale-[0.98]" data-plan-id="casadinha-100" data-plan-name="Casadinha + 2 Baldes" data-plan-price="100" data-plan-description="2 ingressos &amp; 2 Baldes de Cerveja">
+<div class="absolute -top-3 right-6 px-3 py-1 bg-primary rounded-full text-[10px] font-black uppercase tracking-widest text-white">Melhor Preço</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-xl font-bold text-white">Casadinha + Combo</h4>
+<p class="text-sm text-slate-200">2 ingressos &amp; 2 Baldes de Cerveja</p>
+</div>
+<div class="text-right">
+<p class="text-2xl font-bold text-white">R$ 100</p>
+<p class="text-[10px] text-primary-200"></p>
+</div>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-300">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                        A experiência completa da noite 🔥
+                    </div>
+</div>
+</section>
+
+<!-- Location Map Placeholder -->
+<section class="px-6 mt-10">
+<h3 class="font-bold mb-4">LOCAL</h3>
+<div class="relative h-48 rounded-2xl overflow-hidden border border-white/10">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.786777910489!2d-44.85721558963951!3d-2.5759252973913918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f605861aaa84df%3A0x1286a5a6139fa044!2zQmFyICYgRGFuY2V0ZXJpYSBPcMOnw6Nv!5e0!3m2!1spt-BR!2sbr!4v1772018524285!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary/80 p-3 rounded-full animate-bounce">
+<span class="material-symbols-outlined text-white">location_on</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom CTA -->
+<div class="fixed bottom-0 left-0 right-0 p-6 z-50 glass border-t border-white/10">
+<div class="max-w-md mx-auto flex items-center gap-4">
+<div class="shrink-0">
+<p class="text-[10px] text-slate-400 uppercase font-bold tracking-tight">Total</p>
+<p id="total-value" class="text-xl font-bold text-white">Selecione um ingresso</p>
+</div>
+<button id="checkout-button" class="flex-1 h-14 bg-gradient-to-r from-primary via-[#d946ef] to-secondary rounded-2xl font-black uppercase tracking-widest text-white shadow-[0_0_25px_rgba(175,37,244,0.6)] flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+                Finalizar
+                <span class="material-symbols-outlined">trending_flat</span>
+</button>
+</div>
+</div>
+<script>
+    (function () {
+        const ticketCards = document.querySelectorAll('.ticket-card');
+        const totalValueEl = document.getElementById('total-value');
+        const checkoutButton = document.getElementById('checkout-button');
+
+        // Contador regressivo até 4 de abril de 2026 às 22h (horário local do navegador)
+        const countHoursEl = document.getElementById('count-hours');
+        const countMinutesEl = document.getElementById('count-minutes');
+        const countSecondsEl = document.getElementById('count-seconds');
+
+        const eventDate = new Date(2026, 3, 4, 22, 0, 0); // 4 de abril de 2026, 22:00
+
+        function updateCountdown() {
+            if (!countHoursEl || !countMinutesEl || !countSecondsEl) return;
+
+            const now = new Date();
+            let diffMs = eventDate.getTime() - now.getTime();
+
+            if (diffMs <= 0) {
+                countHoursEl.textContent = '0';
+                countMinutesEl.textContent = '0';
+                countSecondsEl.textContent = '0';
+                return;
+            }
+
+            const totalSeconds = Math.floor(diffMs / 1000);
+
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            countHoursEl.textContent = String(hours).padStart(2, '0');
+            countMinutesEl.textContent = String(minutes).padStart(2, '0');
+            countSecondsEl.textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000); // atualiza a cada 1 segundo para horas/minutos/segundos
+
+        let selectedTicket = null;
+
+        const WHATSAPP_PHONE = '5598981378687'; // Número oficial do WhatsApp
+
+        function formatPriceBRL(value) {
+            return value.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+            });
+        }
+
+        function getWhatsappMessage(ticket) {
+            if (!ticket) return '';
+
+            switch (ticket.id) {
+                case 'individual':
+                    return `Bom dia! Quero 1 Ingresso Individual (R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
+                case 'casadinha-15':
+                    return `Bom dia! Quero a Casadinha (2 ingressos por R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
+                case 'casadinha-100':
+                    return `Bom dia! Quero a Casadinha + Combo (2 ingressos e 2 baldes por R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
+                default:
+                    return `Bom dia! Quero o ingresso "${ticket.name}" (R$ ${formatPriceBRL(ticket.price)}) para o Baile do Menino Rei.`;
+            }
+        }
+
+        function getShortLabel(ticket) {
+            if (!ticket) return '';
+
+            switch (ticket.id) {
+                case 'individual':
+                    return 'Ingresso';
+                case 'casadinha-100':
+                    return 'Combo';
+                default:
+                    return ticket.name || '';
+            }
+        }
+
+        ticketCards.forEach(card => {
+            card.addEventListener('click', () => {
+                ticketCards.forEach(c => {
+                    c.classList.remove('neon-border-primary', 'bg-white/5');
+                });
+
+                card.classList.add('neon-border-primary', 'bg-white/5');
+
+                selectedTicket = {
+                    id: card.dataset.planId,
+                    name: card.dataset.planName,
+                    price: parseFloat(card.dataset.planPrice || '0'),
+                    description: card.dataset.planDescription || '',
+                };
+
+                if (totalValueEl && selectedTicket) {
+                    const label = getShortLabel(selectedTicket);
+                    totalValueEl.textContent = `${label} • R$ ${formatPriceBRL(selectedTicket.price)}`;
+                }
+            });
+        });
+
+        if (checkoutButton) {
+            checkoutButton.addEventListener('click', () => {
+                if (!selectedTicket) {
+                    alert('Selecione um ingresso para continuar.');
+                    return;
+                }
+
+                const phone = WHATSAPP_PHONE.replace(/\D/g, '');
+                const message = getWhatsappMessage(selectedTicket);
+                const encodedMessage = encodeURIComponent(message);
+
+                if (!phone) {
+                    alert('Número de WhatsApp não configurado.');
+                    return;
+                }
+
+                const url = `https://wa.me/${phone}?text=${encodedMessage}`;
+                window.open(url, '_blank');
+            });
+        }
+    })();
+</script>
+</body></html>
